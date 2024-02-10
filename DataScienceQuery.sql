@@ -1,3 +1,4 @@
+-- Link to the dataset: https://www.kaggle.com/datasets/rashikrahmanpritom/data-science-job-posting-on-glassdoor?select=Uncleaned_DS_jobs.csv
 ------------------------------------------------------------------------------------------------------------------------
 
 -- Cleaning Data
@@ -19,11 +20,11 @@ SET [Salary Estimate] = REPLACE([Salary Estimate], '(Glassdoor est.)', '')
 
 -- Remove newline and special characters from job description
 
-SELECT REPLACE(REPLACE([Job Description], '\n', ''), '’', '')
+SELECT REPLACE(REPLACE([Job Description], '\n', ''), 'â€™', '')
 FROM Data_Science_Jobs..Data_Science_UNC
 
 UPDATE Data_Science_UNC
-SET [Job Description] = REPLACE(REPLACE([Job Description], '\n', ''), '’', '')
+SET [Job Description] = REPLACE(REPLACE([Job Description], '\n', ''), 'â€™', '')
 
 ------------------------------------------------------------------------------------------------------------------------
 
